@@ -1,5 +1,7 @@
 name: Build docker
 description: 'Build application with docker'
+
+
 inputs:
   path_dockerfile:
     description: "Path to the Dockerfile"
@@ -7,7 +9,6 @@ inputs:
     description: "image name"
   tag_name:
     description: "tag name"
-
 runs:
   using: composite
   steps:
