@@ -20,4 +20,7 @@ jobs:
         image_name: rafaelborges115/academia
         tag_name: v1
     - uses: Morethanworth/academy/.github/actions/docker_push@main
+      with:
+        username: ${{secrets.DOCKERHUB_USERNAME}}
+        password: ${{secrets.DOCKERHUB_TOKEN}}
 
