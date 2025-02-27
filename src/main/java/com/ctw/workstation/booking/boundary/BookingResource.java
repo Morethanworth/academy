@@ -15,7 +15,7 @@ import jakarta.ws.rs.core.Response;
 public class BookingResource {
     @Inject
     BookingService bookingService;
-
+//    this is a coment
     @POST
     public Response createBooking(BookingRequestDTO request) {
         try{
