@@ -7,10 +7,11 @@ inputs:
     description: "image name"
   tag_name:
     description: "tag name"
+
 runs:
   using: composite
   steps:
-    - name: aaa
+    - name: Define tag name
       run: |
         if [ -z "${{ inputs.tag_name }}" ]; then
         echo "TAG=$(date +%s)" >> $GITHUB_ENV
@@ -19,7 +20,7 @@ runs:
         fi
       shell: bash
     - name: Create docker image
-      run: docker build . --file ${{inputs.path_dockerfile }} --tag ${{inputs.image_name}}:${{env.TAG}}
+      run: docker build . --file src/main/docker/Dockerfile.jvm --tag ${{inputs.image_name}}:${{env.TAG}}
       shell: bash
     - name: Verify docker images
       run: docker images
