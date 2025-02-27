@@ -4,7 +4,7 @@ description: 'Build application with docker'
 #  dockerfile_path:
 #    description: "Path to the Dockerfile"
 #    required: false
-#    default: "Dockerfile"
+#    default: "Dockerfile" a
 runs:
   using: composite
   steps:
