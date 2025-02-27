@@ -1,10 +1,10 @@
 name: Build docker
 description: 'Build application with docker'
-inputs:
-  dockerfile_path:
-    description: "Path to the Dockerfile"
-    required: false
-    default: "Dockerfile"
+#inputs:
+#  dockerfile_path:
+#    description: "Path to the Dockerfile"
+#    required: false
+#    default: "Dockerfile"
 runs:
   using: composite
   steps:
