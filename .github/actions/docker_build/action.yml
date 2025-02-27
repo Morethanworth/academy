@@ -1,9 +1,28 @@
-name: Build maven
-description: 'Build application with Maven'
+
+name: Build docker
+description: 'Build application with docker'
+inputs:
+  path_dockerfile:
+    description: "Path to the Dockerfile"
+  image_name:
+    description: "image name"
+  tag_name:
+    description: "tag name"
 
 runs:
   using: composite
   steps:
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    - name: Define tag name
+      run: |
+        if [ -z "${{ inputs.tag_name }}" ]; then
+        echo "TAG=$(date +%s)" >> $GITHUB_ENV
+        else
+        echo "TAG=${{ inputs.tag_name }}" >> $GITHUB_ENV
+        fi
+      shell: bash
+    - name: Create docker image
+      run: docker build . --file src/main/docker/Dockerfile.jvm --tag ${{inputs.image_name}}:${{env.TAG}}
+      shell: bash
+    - name: Verify docker images
+      run: docker images
       shell: bash
