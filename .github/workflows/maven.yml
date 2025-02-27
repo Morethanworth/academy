@@ -17,6 +17,7 @@ jobs:
     - uses: Morethanworth/academy/.github/actions/docker_build@main
       with:
         path_dockerfile: src/main/docker/Dockerfile.jvm
-        image_name: academy
+        image_name: rafaelborges115/academia
         tag_name: v1
+    - uses: Morethanworth/academy/.github/actions/docker_push@main
 
