@@ -1,0 +1,73 @@
+### Create team 1
+POST http://localhost:8080/teams HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Visionarys",
+  "product": "Car",
+  "default_location": "Lisbon"
+}
+### Create team 2
+POST http://localhost:8080/teams HTTP/1.1
+Content-Type: application/json
+
+{
+"name": "Makers",
+"product": "Apps",
+"default_location": "Porto"
+}
+
+### Create team members
+POST localhost:8080/team-members HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Rafael",
+  "ctwId": "CTW04127",
+  "teamId": 1
+}
+
+#### Create rack
+#POST localhost:8080/racks HTTP/1.1
+#Content-Type: application/json
+#
+#{
+#  "serial_number": "222222222",
+#  "defaultLocation": "Porto",
+#  "status": "AVAILABLE",
+#  "teamID": 1
+#}
+
+#### Create rack
+#POST localhost:8080/racks HTTP/1.1
+#Content-Type: application/json
+#
+#{
+#  "serial_number": "123123123213",
+#  "defaultLocation": "Lisbon",
+#  "status": "AVAILABLE",
+#  "teamID": 1
+#}
+#
+#
+#### Create BOOKING
+#POST localhost:8080/bookings HTTP/1.1
+#Content-Type: application/json
+#
+#{
+#  "bookFrom": "2022-03-10T12:15:50",
+#  "bookTo": "2022-03-10T12:15:50",
+#  "rackId": 1,
+#  "requesterId": 1
+#}
+#### Create BOOKING
+#POST localhost:8080/bookings HTTP/1.1
+#Content-Type: application/json
+#
+#{
+#  "bookFrom": "2024-05-10T12:15:50",
+#  "bookTo": "2024-03-10T12:15:50",
+#  "rackId": 1,
+#  "requesterId": 1
+#}
+
